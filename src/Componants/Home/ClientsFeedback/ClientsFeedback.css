@@ -1,6 +1,7 @@
 .feedbacks{
     height: 225px;
-    width: 100%;
+    width:80%;
+    margin: 0 auto;
     margin-bottom: 100px;
 }
 .feedbacks .card-left img{
