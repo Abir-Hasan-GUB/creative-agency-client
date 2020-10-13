@@ -14,6 +14,7 @@ import Service from './Componants/Shared/Service/Service';
 import AdminPanel from './Componants/Shared/AdminPanel/AdminPanel';
 import SarviceList from './Componants/Shared/SarviceList/SarviceList';
 import AddSarvice from './Componants/Shared/AddSarvice/AddSarvice';
+import MakeAdmin from './Componants/Shared/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
             <AddSarvice></AddSarvice>
           </Route>
 
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </Route>
           
           {/* <PrivateRoute path="/registerDetails">
             <RegisterDetails name= {loggedInUser.name}/>

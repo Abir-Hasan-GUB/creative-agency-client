@@ -24,7 +24,7 @@ const AddSarvice = () => {
                         <input placeholder = "Enter title" type="text" name="" id="" required/>
                         <h6>description</h6>
                         <textarea placeholder="Enter Designation" name="" id="" cols="30" rows="3" required></textarea>
-                        <input className = "btn btn-dark sar footerSendBtn addSarviceBtn"type="submit" value="Submit"/>
+                        <input className = "btn btn-success sar footerSendBtn addSarviceBtn"type="submit" value="Submit"/>
                       
                   </div>
                   <div className="col-md-6 SarviceRight">

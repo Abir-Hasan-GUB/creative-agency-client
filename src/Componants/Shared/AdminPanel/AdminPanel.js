@@ -19,7 +19,7 @@ const AdminPanel = () => {
                 <ul className="iconList">
                      <Link className = "Link" to = "/sarviceList"><li>{hdd} Service list</li></Link>
                     <Link className = "Link" to = "/addSarvice"><li>{addSarvice} Add Service</li></Link>
-                     <Link className = "Link" to = "#"><li>{addPeople} Make Admin </li></Link>
+                     <Link className = "Link" to = "/makeAdmin"><li>{addPeople} Make Admin </li></Link>
                 </ul>
             </div>
         </div>

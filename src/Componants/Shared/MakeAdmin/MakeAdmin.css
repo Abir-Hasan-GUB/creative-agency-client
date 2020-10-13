@@ -1,0 +1,11 @@
+.orderListInDetails{
+    position: relative;
+}
+.addAdminBtn{
+    position: absolute;
+    width: 107px !important;
+    margin-left: 10px;
+}
+.makeAdmin{
+    padding: 40px;
+}
