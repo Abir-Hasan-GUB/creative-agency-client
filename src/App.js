@@ -40,9 +40,9 @@ function App() {
             <Service></Service>
           </Route>
 
-          <Route path="/admin">
+          {/* <Route path="/admin">
             <AdminPanel></AdminPanel>
-          </Route>
+          </Route> */}
 
           <Route path="/sarviceList">
             <SarviceList></SarviceList>
