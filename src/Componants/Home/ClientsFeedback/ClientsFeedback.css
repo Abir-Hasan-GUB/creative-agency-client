@@ -1,0 +1,27 @@
+.feedbacks{
+    height: 225px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+.feedbacks .card-left img{
+width: 64px;
+height: 64px;
+border-radius: 50%;
+}
+.feedbacks .card{
+    text-align: left;
+    background: transparent;
+    border: 1px solid #707070;
+    border-radius: 5px;
+}
+.feedbacks .card .card-text{
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 28px;
+letter-spacing: 0.005em;
+color: #707070;
+}
+.feedbacks .card{
+    height: 212px;
+}

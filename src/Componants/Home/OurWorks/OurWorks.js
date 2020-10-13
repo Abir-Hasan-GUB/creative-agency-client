@@ -24,7 +24,7 @@ const OurWorks = () => {
     return (
         <div className = "container">
              <div className="serviceTitle text-center pb-5">
-                    <h2>Provide awesome <span className="sarviceMarked">services</span></h2>
+                    <h2>Here are some of <span className="sarviceMarked"> our works</span></h2>
                 </div>
         <div className="ourWorks">
         <Slider {...settings}>
