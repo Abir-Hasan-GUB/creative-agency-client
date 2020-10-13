@@ -1,0 +1,27 @@
+.panelLogo img{
+    width: 150px;
+    height: 47px;
+}
+.userPanelDiv{
+    padding-left: 50px;
+    padding-top: 25px;
+}
+.iconList{
+    margin-top: 50px;
+}
+.userSettingIcon .iconList li{
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+margin-bottom: 15px;
+color: #263238;
+list-style: none;
+transition: .4s;
+}
+.Link:hover{
+    text-decoration: none;
+}
+.iconList li:hover{
+    color:#009444;
+}

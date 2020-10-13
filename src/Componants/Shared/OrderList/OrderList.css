@@ -1,0 +1,11 @@
+.OrderListDetails{
+    width: 100%;
+    height: 210px;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+.orderImg img{
+width: 74px;
+height: 74px;
+border-radius: 50%;
+}
