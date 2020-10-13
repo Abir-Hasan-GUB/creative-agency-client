@@ -11,7 +11,9 @@ import NotFound from './Componants/NotFound/NotFound';
 import Order from './Componants/Shared/Order/Order';
 import Review from './Componants/Shared/Review/Review';
 import Service from './Componants/Shared/Service/Service';
-
+import AdminPanel from './Componants/Shared/AdminPanel/AdminPanel';
+import SarviceList from './Componants/Shared/SarviceList/SarviceList';
+import AddSarvice from './Componants/Shared/AddSarvice/AddSarvice';
 
 function App() {
   return (
@@ -36,6 +38,19 @@ function App() {
           <Route path="/sarvice">
             <Service></Service>
           </Route>
+
+          <Route path="/admin">
+            <AdminPanel></AdminPanel>
+          </Route>
+
+          <Route path="/sarviceList">
+            <SarviceList></SarviceList>
+          </Route>
+
+          <Route path="/addSarvice">
+            <AddSarvice></AddSarvice>
+          </Route>
+
           
           {/* <PrivateRoute path="/registerDetails">
             <RegisterDetails name= {loggedInUser.name}/>

@@ -1,0 +1,29 @@
+.OrderListRow{
+    height: 50px;
+    width: 100%;
+    background: #F5F6FA;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 30px;
+}
+.PerUser p{
+    font-size: 12px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.mailOfListUser{
+
+    width: 30%;
+}
+.nameOfListUser{
+    width: 13%;
+}
+.sarviceOfListUser{
+    width: 25%;
+}
+.ProjectDetailsOfUser{
+    width: 30%;
+}
+.statusOfUser{
+    width: 6%;
+}

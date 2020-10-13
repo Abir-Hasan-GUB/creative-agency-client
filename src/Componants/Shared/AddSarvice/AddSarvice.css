@@ -1,0 +1,41 @@
+.addSarvice{
+width:100%;
+height: 305px;
+padding: 15px;
+background: #FFFFFF;
+border-radius: 20px;
+}
+.addSarviceLeft h6,.addSarviceRight h6{
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: #232323;
+}
+.addSarviceLeft textarea{
+    border: 1px solid rgb(200, 200, 200)
+}
+.SarviceRight{
+    position: relative;
+}
+.addSarviceBtn{
+    position: absolute;
+    right: -100%;
+    bottom: -30%;
+}
+.addSarvice input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200)
+}
+.IconUpload{
+    width: 38% !important;
+    cursor: pointer;
+    height: 60px;
+    background: #DEFFED;
+    border: 1px solid #009444 !important;
+    box-sizing: border-box;
+    border-radius: 5px;
+    line-height: 2;
+}
