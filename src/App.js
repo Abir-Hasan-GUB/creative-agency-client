@@ -9,6 +9,7 @@ import MainHome from './Componants/Home/MainHome/MainHome';
 import Login from './Componants/Login/Login';
 import NotFound from './Componants/NotFound/NotFound';
 import Order from './Componants/Shared/Order/Order';
+import Review from './Componants/Shared/Review/Review';
 
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
 
           <Route path="/order">
             <Order></Order>
+          </Route>
+
+          <Route path="/review">
+            <Review></Review>
           </Route>
           
           {/* <PrivateRoute path="/registerDetails">

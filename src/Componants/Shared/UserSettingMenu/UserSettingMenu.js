@@ -17,9 +17,9 @@ const UserSettingMenu = () => {
             </div>
             <div className="userSettingIcon">
                 <ul className="iconList">
-                    <Link className = "Link" to = "#"><li>{shoppingCart} Order</li></Link>
-                     <Link className = "Link" to = "#"><li>{hdd} Service list</li></Link>
-                     <Link className = "Link" to = "#"><li>{comment} Review</li></Link>
+                    <Link className = "Link" to = "/order"><li>{shoppingCart} Order</li></Link>
+                     <Link className = "Link" to = "/sarvice"><li>{hdd} Service list</li></Link>
+                     <Link className = "Link" to = "/review"><li>{comment} Review</li></Link>
                 </ul>
             </div>
         </div>

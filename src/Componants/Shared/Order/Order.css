@@ -7,14 +7,14 @@
     background: #fff
 }
 .topBarOfOrder h3{
-font-style: normal;
-font-weight: 500;
-line-height: 33px;
-color: #0C0C0C;
-padding: 0 20px;
-line-height: 48px;
-font-size: 16px;
-display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33px;
+    color: #0C0C0C;
+    padding: 0 20px;
+    line-height: 48px;
+    font-size: 16px;
+    display: inline-block;
 }
 .orderListInDetails{
     background: #ebe9e9;
