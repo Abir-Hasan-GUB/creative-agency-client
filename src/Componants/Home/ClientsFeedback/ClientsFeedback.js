@@ -6,7 +6,7 @@ import customer3 from '../../Images/customer-3.png';
 
 const ClientsFeedback = () => {
     return (
-        <div className="container">
+        <div id="feedback" className="container">
             <div className="serviceTitle text-center ">
                 <h2>Clients <span className="sarviceMarked" > Feedback</span></h2>
 

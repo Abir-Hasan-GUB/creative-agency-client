@@ -10,3 +10,10 @@
     width: 150px !important;
 height: 47px !important;
 }
+.navHome{
+    border-bottom: 3px solid green;
+}
+.nav-item .nav-link:hover{
+    border-bottom: 3px solid green;
+    transition: .4s ;
+}

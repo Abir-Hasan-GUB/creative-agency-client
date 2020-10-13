@@ -22,7 +22,7 @@ const OurWorks = () => {
         cssEase: "linear"
       };
     return (
-        <div className = "container">
+        <div id="ourworks" className = "container">
              <div className="serviceTitle text-center pb-5">
                     <h2>Here are some of <span className="sarviceMarked"> our works</span></h2>
                 </div>
