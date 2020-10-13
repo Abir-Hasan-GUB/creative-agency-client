@@ -3,9 +3,36 @@
     height: 210px;
     background: #FFFFFF;
     border-radius: 15px;
+    margin-left: 4%;
+    padding: 15px;
 }
 .orderImg img{
 width: 74px;
 height: 74px;
 border-radius: 50%;
+top: 0;
+position: relative;
+left: 0;
+}
+.orderText h3{
+font-style: normal;
+margin-top: 20px;
+font-weight: 600;
+font-size: 20px;
+line-height: 16px;
+letter-spacing: 0.396px;
+color: #111430;
+}
+.orderText p{
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 28px;
+letter-spacing: 0.396px;
+color: rgba(0, 0, 0, 0.7);
+}
+.statusBtn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
 }

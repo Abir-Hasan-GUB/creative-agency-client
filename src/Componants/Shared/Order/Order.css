@@ -4,7 +4,7 @@
 .topBarOfOrder{
     height: 50px;
     width: 100%;
-    background: rgb(172, 8, 8);
+    background: #fff
 }
 .topBarOfOrder h3{
 font-style: normal;
@@ -17,7 +17,7 @@ font-size: 16px;
 display: inline-block;
 }
 .orderListInDetails{
-    background: rgb(0, 165, 216);
-    height: 100vh;
+    background: #ebe9e9;
+    height: 80vh;
     padding: 30px 20px 0 20px;
 }
