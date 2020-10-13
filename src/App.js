@@ -10,6 +10,7 @@ import Login from './Componants/Login/Login';
 import NotFound from './Componants/NotFound/NotFound';
 import Order from './Componants/Shared/Order/Order';
 import Review from './Componants/Shared/Review/Review';
+import Service from './Componants/Shared/Service/Service';
 
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
 
           <Route path="/review">
             <Review></Review>
+          </Route>
+
+          <Route path="/sarvice">
+            <Service></Service>
           </Route>
           
           {/* <PrivateRoute path="/registerDetails">

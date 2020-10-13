@@ -21,3 +21,18 @@
     height: 80vh;
     padding: 30px 20px 0 20px;
 }
+.inputSlice .slice1{
+    width: 45%;
+    display: inline-block;
+}
+.slice2{
+    display: inline-block !important;
+    width: 40% !important;
+    cursor: pointer;
+    margin-left: 15%;
+    height: 60px;
+    background: #DEFFED;
+    border: 1px solid #009444 !important;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
