@@ -1,0 +1,9 @@
+.brandLogo{
+    height: 150px;
+    width: 75%;
+    margin: 0 auto 50px auto;
+}
+.brandLogo img{
+    width: 140px;
+    height: 36px;
+}

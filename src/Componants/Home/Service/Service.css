@@ -1,0 +1,17 @@
+.service{
+    width: 100%;
+    margin-bottom: 80px;
+}
+.sarviceMarked{
+    color: #7AB259;
+}
+.serviceTitle h2{
+height: 43px;
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 34px;
+line-height: 43px;
+letter-spacing: 0.396px;
+color: #2D2D2D;
+}
