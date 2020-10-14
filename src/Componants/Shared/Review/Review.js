@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import OrderList from '../OrderList/OrderList';
 import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 
 const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const addComments = () => {
         let CompanyDesignation = document.getElementById('CompanyDesignation').value;
         let reviewMessage = document.getElementById('reviewMessage').value;
-        let emailAddressForComment = document.getElementById('emailAddressForComment').value;
+        let userNameForReview = document.getElementById('userNameForReview').value;
 
-        let commentsInfo = {designation: CompanyDesignation,message: reviewMessage,email: emailAddressForComment};
-        
-        console.log(commentsInfo);
+        let commentsInfo = {designation: CompanyDesignation,message: reviewMessage,name: userNameForReview};
 
         fetch('http://localhost:5000/addComments',{
             method: 'POST',
@@ -40,7 +39,7 @@ const Review = () => {
             <div className="col-md-12">
                 <div className="orderImg footerRight">
                 <form onSubmit = {addComments}>
-                        <input id="emailAddressForComment" type="email" placeholder="Your email address" name="" required />
+                        <input id="userNameForReview" type="text" placeholder="Your Name" name="" required />
                         <input type="text" name="" id="CompanyDesignation" placeholder="Company’s name, Designation" required />
                         <textarea placeholder="Your message" name="" id="reviewMessage" cols="30" rows="5" required></textarea>
                         <input className="btn btn-dark footerSendBtn" type="submit" value="send" />

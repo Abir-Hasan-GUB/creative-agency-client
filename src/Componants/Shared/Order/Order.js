@@ -1,8 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 import './Order.css';
 
 const Order = () => {
+
+    const [info, setInfo] = useState({});
+    const [file, setFile] = useState(null);
+    const handleBlur = e =>{
+        const newInfo = {...info}
+        newInfo[e.target.name] = e.target.value;
+        setInfo(newInfo);
+    }
+
+    const onChengName = (e) => {
+        const newInfo = {...info}
+        newInfo[e.target.name] = e.target.value;
+        setInfo(newInfo);
+    }
+
+    const handleFileChenge = e =>{
+        const newFile = e.target.files[0];
+        setFile(newFile);
+    }
+
+    const handleAddOrder = () => {
+        const formData = new FormData()
+        formData.append('file', file);
+        formData.append('name', info.name);
+        formData.append('email', info.email);
+        formData.append('productName', info.productName);
+        formData.append('ProductDetails', info.ProductDetails);
+        formData.append('price', info.price);
+
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+
+
     return (
         <div className="container order">
             <div className="row">
@@ -19,14 +63,14 @@ const Order = () => {
                 <div className = "row">
             <div className="col-md-12">
                 <div className="orderImg footerRight">
-                <form action="">
-                        <input type="text" placeholder="Your name / company’s name" name="" id="" required />
-                        <input type="email" placeholder="Your email address" name="" id="" required />
-                        <input type="text" placeholder="Product Type" name="" id="" required />
-                        <textarea placeholder="Project Details" name="" id="" cols="30" rows="5" required></textarea>
+                <form onSubmit={handleAddOrder}>
+                        <input onBlur = {handleBlur} type="text" placeholder="Your name / company’s name" name="name" id="" required />
+                        <input onBlur = {handleBlur} type="email" placeholder="Your email address" name="email" id="" required />
+                        <input onChange = {onChengName} name="" type="text" placeholder="Product Type" name="productName" id="productName" required />
+                        <textarea onBlur = {handleBlur} placeholder="Project Details" name="ProductDetails" id="" cols="30" rows="5" required></textarea>
                         <div className="inputSlice">
-                        <input className="slice1" type="num" placeholder="Price" name="" id="" required />
-                        <input className="slice2" type="file" name="fileUpload" id=""/>
+                        <input onBlur = {handleBlur} className="slice1" type="num" placeholder="Price" name="price" id="" required />
+                        <input onChange={handleFileChenge} className="slice2" type="file" name="file" id=""/>
                         </div>
                         <input className="btn btn-dark footerSendBtn" type="submit" value="send" />
                     </form>

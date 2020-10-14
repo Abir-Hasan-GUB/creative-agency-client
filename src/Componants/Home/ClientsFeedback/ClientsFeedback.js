@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../App';
 import './ClientsFeedback.css';
-import customer1 from '../../Images/customer-1.png';
-import customer2 from '../../Images/customer-2.png';
-import customer3 from '../../Images/customer-3.png';
 
 const ClientsFeedback = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const[comments, setComments] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/showComents')
+        .then(response => response.json())
+        .then(data => setComments(data))
+    },[])
+
+
+
+
     return (
         <div id="feedback" className="container">
             <div className="serviceTitle text-center ">
@@ -14,51 +24,23 @@ const ClientsFeedback = () => {
 
     <div class="card-deck mt-5 row">
 
-        <div class="card">
+        {
+            comments.map(comment=> <div style={{overflow: 'scroll'}} class="card">
             <div class="card-body">
                 <div className="feedbackInfo d-flex align-items-center  row">
                     <div className="card-left col-md-3">
-                        <img src={customer1} alt="" />
+                        <img src= {loggedInUser.photo} alt="" />
                     </div>
                     <div className="card-right col-md-9">
-                        <h5 class="card-title">Nash Patrik</h5>
-                        <h6>CEO, Manpol</h6>
+                        <h5 class="card-title">{comment.name}</h5>
+                        <h6>{comment.designation}</h6>
                     </div>
                 </div>
-                <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
+                <p class="card-text mt-3">{comment.message} </p>
             </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div className="feedbackInfo d-flex align-items-center  row">
-                    <div className="card-left col-md-3">
-                        <img src={customer2} alt="" />
-                    </div>
-                    <div className="card-right col-md-9">
-                        <h5 class="card-title">Miriam Barron</h5>
-                        <h6>CEO, Manpol</h6>
-                    </div>
-                </div>
-                <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div className="feedbackInfo d-flex align-items-center  row">
-                    <div className="card-left col-md-3">
-                        <img src={customer3} alt="" />
-                    </div>
-                    <div className="card-right col-md-9">
-                        <h5 class="card-title">Bria Malone</h5>
-                        <h6>CEO, Manpol</h6>
-                    </div>
-                </div>
-                <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
-            </div>
-
-        </div>
+        </div>)
+        }
+        
     </div>
 </div>
             </div>
