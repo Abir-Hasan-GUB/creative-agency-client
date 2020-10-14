@@ -13,7 +13,7 @@ const AdminPanel = () => {
     return (
         <div className="container userPanelDiv">
             <div className="panelLogo">
-                <img className="img-fluid" src={logo} alt="logo" />
+                <Link to="/"><img className="img-fluid" src={logo} alt="logo" /></Link>
             </div>
             <div className="userSettingIcon">
                 <ul className="iconList">

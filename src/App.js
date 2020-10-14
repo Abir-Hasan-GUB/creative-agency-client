@@ -14,13 +14,14 @@ import Service from './Componants/Shared/Service/Service';
 import SarviceList from './Componants/Shared/SarviceList/SarviceList';
 import AddSarvice from './Componants/Shared/AddSarvice/AddSarvice';
 import MakeAdmin from './Componants/Shared/MakeAdmin/MakeAdmin';
+import PrivateRoute from './Componants/Shared/PrivateRoute/PrivateRoute';
+import AdminPanel from './Componants/Shared/AdminPanel/AdminPanel';
+import VarifyClientOrAdmin from './Componants/VarifyClientOrAdmin/VarifyClientOrAdmin';
 
 export const UserContext = createContext();
 
 function App() {
-
   const [loggedInUser, setLoggedInUser] = useState({});
-
   return (
 
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -48,9 +49,16 @@ function App() {
             <Service></Service>
           </Route>
 
+          <Route path="/varify">
+            <VarifyClientOrAdmin></VarifyClientOrAdmin>
+          </Route>
+
           {/* <Route path="/admin">
             <AdminPanel></AdminPanel>
           </Route> */}
+          {/* <PrivateRoute path="/admin">
+          <AdminPanel></AdminPanel>
+          </PrivateRoute> */}
 
           <Route path="/sarviceList">
             <SarviceList></SarviceList>
@@ -64,10 +72,8 @@ function App() {
             <MakeAdmin></MakeAdmin>
           </Route>
           
-          {/* <PrivateRoute path="/registerDetails">
-            <RegisterDetails name= {loggedInUser.name}/>
-          </PrivateRoute>
-
+         
+{/* 
           <PrivateRoute path="/VolunteerRegisterList">
             <VolunteerRegisterList/>
           </PrivateRoute>
@@ -78,8 +84,8 @@ function App() {
 
           <PrivateRoute path="/register">
           <Register name={loggedInUser.name} email={loggedInUser.email} />
-          </PrivateRoute> */}
-          
+          </PrivateRoute>
+           */}
           <Route path="*">
             <NotFound></NotFound>
           </Route>

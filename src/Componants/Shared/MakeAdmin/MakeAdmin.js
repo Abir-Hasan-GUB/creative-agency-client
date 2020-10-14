@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AdminPanel from '../AdminPanel/AdminPanel';
 import './MakeAdmin.css';
-
 const MakeAdmin = () => {
+    const handleAddSarvice = () => {
+        const adminMail = document.getElementById('adminMail').value;
+        const AdminInfo = {email:adminMail, name:"admin", createdTime: new Date()};
+
+        fetch('http://localhost:5000/addAdmin',{
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(AdminInfo)
+        })
+        .then(response => response.json())
+        .then(success => {})
+    }
+   
     return (
         <div className="container review">
             <div className="row">
@@ -11,22 +23,23 @@ const MakeAdmin = () => {
                 </div>
                 <div className="col-md-9 orderRight">
                     <div className="topBarOfOrder d-flex justify-content-between">
-                        <h3>Order</h3>
+                        <h3>Make Admin</h3>
                         <h3>User Name</h3>
                     </div>
 
                     <div className="orderListInDetails">
-                        <form action="">
+                        <form>
+                            
                             <div className="addSarvice row">
                                 <div className="col-md-9 addSarviceLeft makeAdmin">
 
                                     <h6>Email</h6>
-                                    <input type="email" placeholder="Your email address" name="" id="" required />
-                                    <input className="btn btn-success addAdminBtn footerSendBtn" type="submit" value="Submit" />
-
+                                    <input type="email" placeholder="Your email address" name="" id="adminMail" required />
+                                    <input onClick = {handleAddSarvice} className="btn btn-success addAdminBtn footerSendBtn" type="submit" value="Submit" />
+                                    
                                 </div>
                             </div>
-                        </form>
+                            </form>
                     </div>
                 </div>
             </div>

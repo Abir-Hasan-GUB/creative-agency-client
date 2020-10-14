@@ -1,12 +1,13 @@
 import React from 'react';
 import './NavBar.css';
 import logo from '../../Images/logos/logo.png';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
        <nav class="navbar navbar-expand-lg navbar-light container">
-  <a class="navbar-brand" href="#">
-      <img className="logo" src={logo} alt="logo"/>
+  <a class="navbar-brand">
+      <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,7 +27,7 @@ const NavBar = () => {
         <a class="nav-link" href="#Footer">Contact US</a>
       </li>
       <li class="nav-item">
-        <button className="btn btn-dark">Login</button>
+        <Link to="/login"><button className="btn btn-dark">Login</button></Link>
       </li>
 
     </ul>

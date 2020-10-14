@@ -11,7 +11,7 @@ const Review = () => {
             </div>
             <div className="col-md-9 orderRight">
                 <div className="topBarOfOrder d-flex justify-content-between">
-                    <h3>Order</h3>
+                    <h3>Review</h3>
                     <h3>User Name</h3>
                 </div>
 

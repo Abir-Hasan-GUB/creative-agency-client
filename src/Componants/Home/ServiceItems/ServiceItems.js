@@ -6,7 +6,7 @@ import service3 from '../../Images/icons/service3.png';
 
 const ServiceItems = () => {
     return (
-        <div class="card-deck sarviceItems">
+        <div class="card-deck sarviceItems col-md-4 col-lg-4 col-sm-6 mt-3">
   <div class="card">
     <img className="card-img-top mt-3 mb-3" src={service1} alt="service1"/>
     <div class="card-body">
@@ -15,7 +15,7 @@ const ServiceItems = () => {
     </div>
     
   </div>
-  <div class="card">
+  {/* <div class="card">
     <img className="card-img-top mt-3 mb-3" src={service2} alt="service2"/>
     <div class="card-body">
       <h5 class="card-title">Graphic design</h5>
@@ -30,7 +30,7 @@ const ServiceItems = () => {
       <p class="card-text">With well written codes, we build amazing apps for all platforms, mobile and web apps in general.</p>
     </div>
     
-  </div>
+  </div> */}
 </div>
     );
 };
