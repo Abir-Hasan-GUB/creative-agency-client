@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -11,13 +11,21 @@ import NotFound from './Componants/NotFound/NotFound';
 import Order from './Componants/Shared/Order/Order';
 import Review from './Componants/Shared/Review/Review';
 import Service from './Componants/Shared/Service/Service';
-import AdminPanel from './Componants/Shared/AdminPanel/AdminPanel';
 import SarviceList from './Componants/Shared/SarviceList/SarviceList';
 import AddSarvice from './Componants/Shared/AddSarvice/AddSarvice';
 import MakeAdmin from './Componants/Shared/MakeAdmin/MakeAdmin';
 
+export const UserContext = createContext();
+
 function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
+
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+
+  <h1>Name: {loggedInUser.name}</h1>
     <Router>
       <Switch>
           <Route exact path="/">
@@ -78,6 +86,8 @@ function App() {
 
         </Switch>
     </Router>
+
+    </UserContext.Provider>
   );
 }
 

@@ -2,39 +2,43 @@ import React, { useContext } from 'react';
 import './Login.css';
 import logo from '../Images/logos/crative-agency.png';
 import google from '../Images/icons/google.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import fireBaseConfig from './firebase.config';
+import { UserContext } from '../../App';
 
 const Login = () => {
-    // const history = useHistory();
-    // const location = useLocation();
-    // const { from } = location.state || { from: { pathname: "/" } };
 
-    // const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
-    // if(firebase.apps.length === 0) {
-    //     firebase.initializeApp(firebaseConfig);
-    // }
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+    if(firebase.apps.length === 0) {
+        firebase.initializeApp(fireBaseConfig);
+    }
 
     const handleGoogleSignIn = () => {
-        console.log("Clicked")
-        // const provider = new firebase.auth.GoogleAuthProvider();
+        const provider = new firebase.auth.GoogleAuthProvider();
 
-        // firebase.auth().signInWithPopup(provider).then(function(result) {
-        //     const {displayName, email} = result.user;
-        //     const signedInUser = {name: displayName, email}
-        //     setLoggedInUser(signedInUser);
-        //     history.replace(from);
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            const {displayName, email} = result.user;
+            const signedInUser = {name: displayName, email}
+            setLoggedInUser(signedInUser);
+            history.replace(from);
 
-        //   }).catch(function(error) {
-        //     // Handle Errors here.
-        //     var errorCode = error.code;
-        //     var errorMessage = error.message;
-        //     // The email of the user's account used.
-        //     var email = error.email;
-        //     // The firebase.auth.AuthCredential type that was used.
-        //     var credential = error.credential;
-        //     // ...
-        //   });
+          }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
 
     }
     return (
@@ -50,7 +54,7 @@ const Login = () => {
                         <img src= { google } alt="google icon"/>
                         <span className = "googleText">Continue with Google</span>
                     </div>
-                    <p>Don’t have an account? <span className="creatAccount">Create an account</span></p>
+                    <p>Don’t have an account? <span className="creatAccount" onClick={handleGoogleSignIn}>Create an account</span></p>
                 </div>
             </div>
         </div>
