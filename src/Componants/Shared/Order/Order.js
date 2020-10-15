@@ -33,7 +33,7 @@ const Order = () => {
         formData.append('ProductDetails', info.ProductDetails);
         formData.append('price', info.price);
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://frozen-hamlet-61699.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })
