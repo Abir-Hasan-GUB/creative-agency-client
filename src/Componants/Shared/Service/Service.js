@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AdminPanel from '../AdminPanel/AdminPanel';
 import OrderList from '../OrderList/OrderList';
 import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 
@@ -16,7 +17,7 @@ const Service = () => {
         <div className="container">
              <div className="row">
            <div className="col-md-3">
-                <UserSettingMenu></UserSettingMenu>
+                <AdminPanel></AdminPanel>
             </div>
             <div className="col-md-9 orderRight">
                 <div className="topBarOfOrder d-flex justify-content-between">

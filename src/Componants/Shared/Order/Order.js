@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AdminPanel from '../AdminPanel/AdminPanel';
 import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 import './Order.css';
 
@@ -51,7 +52,7 @@ const Order = () => {
         <div className="container order">
             <div className="row">
            <div className="col-md-3">
-                <UserSettingMenu></UserSettingMenu>
+                <AdminPanel></AdminPanel>
             </div>
             <div className="col-md-9 orderRight">
                 <div className="topBarOfOrder d-flex justify-content-between">

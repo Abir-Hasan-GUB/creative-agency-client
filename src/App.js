@@ -48,16 +48,20 @@ function App() {
             <Service></Service>
           </Route>
 
-          <Route path="/varify">
+          {/* <Route path="/admin">
+            <AdminPanel></AdminPanel>
+          </Route> */}
+
+          {/* <Route path="/varify">
             <VarifyClientOrAdmin></VarifyClientOrAdmin>
-          </Route>
+          </Route> */}
 
           {/* <Route path="/admin">
             <AdminPanel></AdminPanel>
           </Route> */}
-          {/* <PrivateRoute path="/admin">
+          <PrivateRoute path="/admin">
           <AdminPanel></AdminPanel>
-          </PrivateRoute> */}
+          </PrivateRoute>
 
           <Route path="/sarviceList">
             <SarviceList></SarviceList>

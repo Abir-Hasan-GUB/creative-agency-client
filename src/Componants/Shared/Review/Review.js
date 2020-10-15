@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
+import AdminPanel from '../AdminPanel/AdminPanel';
 import OrderList from '../OrderList/OrderList';
 import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 
@@ -26,7 +27,7 @@ const Review = () => {
         <div className="container review">
             <div className="row">
            <div className="col-md-3">
-                <UserSettingMenu></UserSettingMenu>
+                <AdminPanel></AdminPanel>
             </div>
             <div className="col-md-9 orderRight">
                 <div className="topBarOfOrder d-flex justify-content-between">
