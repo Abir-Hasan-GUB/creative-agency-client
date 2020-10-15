@@ -36,59 +36,34 @@ function App() {
             <Login />
           </Route>
 
-          <Route path="/order">
+          <PrivateRoute path="/order">
             <Order></Order>
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/review">
+          <PrivateRoute path="/review">
             <Review></Review>
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/sarvice">
+          <PrivateRoute path="/sarvice">
             <Service></Service>
-          </Route>
+          </PrivateRoute>
 
-          {/* <Route path="/admin">
-            <AdminPanel></AdminPanel>
-          </Route> */}
-
-          {/* <Route path="/varify">
-            <VarifyClientOrAdmin></VarifyClientOrAdmin>
-          </Route> */}
-
-          {/* <Route path="/admin">
-            <AdminPanel></AdminPanel>
-          </Route> */}
           <PrivateRoute path="/admin">
           <AdminPanel></AdminPanel>
           </PrivateRoute>
 
-          <Route path="/sarviceList">
+          <PrivateRoute path="/sarviceList">
             <SarviceList></SarviceList>
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/addSarvice">
+          <PrivateRoute path="/addSarvice">
             <AddSarvice></AddSarvice>
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/makeAdmin">
+          <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </PrivateRoute>
           
-         
-{/* 
-          <PrivateRoute path="/VolunteerRegisterList">
-            <VolunteerRegisterList/>
-          </PrivateRoute>
-
-          <PrivateRoute path="/addEvent">
-            <AddEvent></AddEvent>
-          </PrivateRoute>
-
-          <PrivateRoute path="/register">
-          <Register name={loggedInUser.name} email={loggedInUser.email} />
-          </PrivateRoute>
-           */}
           <Route path="*">
             <NotFound></NotFound>
           </Route>

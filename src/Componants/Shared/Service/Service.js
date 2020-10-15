@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../App';
 import AdminPanel from '../AdminPanel/AdminPanel';
 import OrderList from '../OrderList/OrderList';
 import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 
 const Service = () => {
-
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const[orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/showOrder')
+        fetch('http://localhost:5000/registerUser?email='+loggedInUser.email)
         .then(response => response.json())
         .then(data => setOrders(data))
     },[])
@@ -31,7 +32,7 @@ const Service = () => {
             {/* <OrderList></OrderList>  */}
 
             {
-                orders.map(order => <OrderList name={order.name} productName = {order.productName} ProductDetails = {order.ProductDetails}></OrderList>)
+                orders.map(order => <OrderList img = {order.image} name={order.name} productName = {order.productName} ProductDetails = {order.ProductDetails}></OrderList>)
             }               
                
                   

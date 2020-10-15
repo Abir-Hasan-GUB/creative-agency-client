@@ -9,7 +9,7 @@ const OrderList = (props) => {
         <div >
             <div style={{overflow: 'scroll'}} className="col-md-12 OrderListDetails">
                 <div className="orderImg">
-                    <img src={order} alt=""/>
+                    <img src={`data:image/jpeg;base64,${props.img.img}`} alt=""/>
                     <button className="btn btn-dark statusBtn">Status</button>
                 </div>
                 <div className="orderText ">

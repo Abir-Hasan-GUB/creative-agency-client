@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminPanel from '../AdminPanel/AdminPanel';
 import ServiceListPerUser from '../SarviceListPerUser/ServiceListPerUser';
 import './SarviceList.css';
 
 const SarviceList = () => {
+
+    const[sarvice, setSarvice] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/showAllService')
+        .then(response => response.json())
+        .then(data => setSarvice(data))
+    },[])
+
+
     return (
         <div className="container review">
         <div className="row">
@@ -24,8 +34,13 @@ const SarviceList = () => {
                     <p>Project Details</p>
                     <p>Status</p>
                 </div>
+
+                
                 {/* show sarvice lise sirially */}
-                <ServiceListPerUser></ServiceListPerUser>
+                {
+                    sarvice.map(perSarvice => <ServiceListPerUser name={perSarvice.name} email={perSarvice.email} productName = {perSarvice.productName} productDetails = {perSarvice.ProductDetails} price = {perSarvice.price} imgae = {perSarvice.imgae}></ServiceListPerUser>)
+                }
+                {/* <ServiceListPerUser></ServiceListPerUser> */}
             </div>
         </div>
        </div>
