@@ -1,8 +1,10 @@
 .sarviceItems .card{
-    width: 370px;
+    width: 370px !important;
+    height: 400px !important;
     background: #FFFFFF;
     border-radius: 10px;
     transition: .4s ;
+    text-align: center;
     cursor: pointer;
 }
 .sarviceItems .card:hover{
@@ -19,7 +21,6 @@ color: #111430;
 
 }
 .sarviceItems .card .card-text{
-width: 282px;
 font-weight: 300;
 font-size: 16px;
 line-height: 28px;
@@ -34,4 +35,13 @@ color: rgba(0, 0, 0, 0.7);
 }
 .sarviceItems{
     padding: 0 10px; 
+}
+a,Link{
+    text-decoration: none;
+}
+a:hover,Link:hover{
+    text-decoration: none;
+}
+#linkCard{
+    margin-right: 3rem;
 }
