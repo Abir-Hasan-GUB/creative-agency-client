@@ -1,13 +1,10 @@
 import React from 'react';
 import './ServiceItems.css';
-import service1 from '../../Images/icons/service1.png';
-import service2 from '../../Images/icons/service2.png';
-import service3 from '../../Images/icons/service3.png';
 import { Link } from 'react-router-dom';
 
 const ServiceItems = (props) => {
   return (
-    <div id="linkCard" class="linkCard card-deck sarviceItems col-md-4 col-lg-4 col-sm-6 mt-3">
+    <div id="linkCard" class="linkCard card-deck sarviceItems col-md-3 mt-3">
    
    <Link to='/admin'>
    <div class="card">

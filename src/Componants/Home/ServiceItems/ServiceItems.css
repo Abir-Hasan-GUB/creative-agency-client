@@ -1,9 +1,10 @@
 .sarviceItems .card{
-    width: 370px !important;
-    height: 400px !important;
+    width: 300px !important;
+    height: 350px !important;
     background: #FFFFFF;
     border-radius: 10px;
     transition: .4s ;
+    overflow: hidden;
     text-align: center;
     cursor: pointer;
 }

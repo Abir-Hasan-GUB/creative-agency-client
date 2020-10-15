@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import './ClientsFeedback.css';
+import coustomar from '../../Images/customer-1.png';
 
 const ClientsFeedback = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -25,11 +26,11 @@ const ClientsFeedback = () => {
     <div class="card-deck mt-5 row">
 
         {
-            comments.map(comment=> <div style={{overflow: 'scroll'}} class="card">
+            comments.map(comment=> <div style={{overflow: 'hidden'}} class="card">
             <div class="card-body">
                 <div className="feedbackInfo d-flex align-items-center  row">
                     <div className="card-left col-md-3">
-                        <img src= {loggedInUser.photo} alt="" />
+                        <img src= {coustomar} alt="" />
                     </div>
                     <div className="card-right col-md-9">
                         <h5 class="card-title">{comment.name}</h5>

@@ -10,7 +10,7 @@ const Review = () => {
         let reviewMessage = document.getElementById('reviewMessage').value;
         let userNameForReview = document.getElementById('userNameForReview').value;
 
-        let commentsInfo = {designation: CompanyDesignation,message: reviewMessage,name: userNameForReview};
+        let commentsInfo = {designation: CompanyDesignation,message: reviewMessage,name: userNameForReview,photoURL:loggedInUser.photoURL};
 
         fetch('http://localhost:5000/addComments',{
             method: 'POST',
