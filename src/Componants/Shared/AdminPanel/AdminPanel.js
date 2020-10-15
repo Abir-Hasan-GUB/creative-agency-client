@@ -17,7 +17,7 @@ const AdminPanel = () => {
     const [isAdmin,setisAdmin] = useState(false);
 
     useEffect(() =>{
-        fetch('https://frozen-hamlet-61699.herokuapp.com/isAdmin',{
+        fetch('http://localhost:5000/isAdmin',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({email: loggedInUser.email})
@@ -25,7 +25,6 @@ const AdminPanel = () => {
         .then(response => response.json())
         .then(data => setisAdmin(data))
     },[])
-    console.log("Is Admin: ",isAdmin)
     return (
         <div className="container userPanelDiv">
             <div className="panelLogo">

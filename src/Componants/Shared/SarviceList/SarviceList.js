@@ -39,7 +39,7 @@ const SarviceList = () => {
                 
                 {/* show sarvice lise sirially */}
                 {
-                    sarvice.map(perSarvice => <ServiceListPerUser name={perSarvice.name} email={perSarvice.email} productName = {perSarvice.productName} productDetails = {perSarvice.ProductDetails} price = {perSarvice.price} imgae = {perSarvice.imgae}></ServiceListPerUser>)
+                    sarvice.map(perSarvice => <ServiceListPerUser name={perSarvice.name} email={perSarvice.email} productName = {perSarvice.productName} productDetails = {perSarvice.ProductDetails} price = {perSarvice.price}></ServiceListPerUser>)
                 }
                 {/* <ServiceListPerUser></ServiceListPerUser> */}
             </div>

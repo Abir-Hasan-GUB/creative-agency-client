@@ -25,7 +25,7 @@ const AddSarvice = () => {
         formData.append('name', info.name);
         formData.append('designation', info.designation);
 
-        fetch('https://frozen-hamlet-61699.herokuapp.com/addSarvice', {
+        fetch('http://localhost:5000/addSarvice', {
             method: 'POST',
             body: formData
         })

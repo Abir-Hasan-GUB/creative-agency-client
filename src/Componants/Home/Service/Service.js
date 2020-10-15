@@ -24,7 +24,7 @@ const Service = () => {
                
                 <div className="sarviceList row">
                    {
-                        course.map(courses => <ServiceItems name = {courses.name} img = {courses.image} designation = {courses.designation}></ServiceItems>)
+                        course.map(courses => <ServiceItems name = {courses.name} designation = {courses.designation}></ServiceItems>)
                     }
                 </div>
                
