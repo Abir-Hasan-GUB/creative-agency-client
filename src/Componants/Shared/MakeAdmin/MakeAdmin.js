@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../../App';
 import AdminPanel from '../AdminPanel/AdminPanel';
 import './MakeAdmin.css';
 const MakeAdmin = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    
     const handleAddSarvice = () => {
         const adminMail = document.getElementById('adminMail').value;
         const AdminInfo = {email:adminMail, name:"admin", createdTime: new Date()};
@@ -24,7 +27,7 @@ const MakeAdmin = () => {
                 <div className="col-md-9 orderRight">
                     <div className="topBarOfOrder d-flex justify-content-between">
                         <h3>Make Admin</h3>
-                        <h3>User Name</h3>
+                        <h3>{loggedInUser.name}</h3>
                     </div>
 
                     <div className="orderListInDetails">

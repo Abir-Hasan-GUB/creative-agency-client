@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import AdminPanel from '../AdminPanel/AdminPanel';
-import OrderList from '../OrderList/OrderList';
-import UserSettingMenu from '../UserSettingMenu/UserSettingMenu';
 
 const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -32,7 +30,7 @@ const Review = () => {
             <div className="col-md-9 orderRight">
                 <div className="topBarOfOrder d-flex justify-content-between">
                     <h3>Review</h3>
-                    <h3>User Name</h3>
+                    <h3>{loggedInUser.name}</h3>
                 </div>
 
                 <div className="orderListInDetails">

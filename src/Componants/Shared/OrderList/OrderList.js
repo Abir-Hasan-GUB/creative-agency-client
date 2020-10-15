@@ -1,6 +1,5 @@
 import React from 'react';
 import './OrderList.css';
-import order from '../../Images/icons/service1.png';
 
 const OrderList = (props) => {
     console.log(props)
