@@ -12,7 +12,7 @@ const Review = () => {
 
         let commentsInfo = {designation: CompanyDesignation,message: reviewMessage,name: userNameForReview,photoURL:loggedInUser.photoURL};
 
-        fetch('http://localhost:5000/addComments',{
+        fetch('https://murmuring-spire-02035.herokuapp.com/addComments',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(commentsInfo)

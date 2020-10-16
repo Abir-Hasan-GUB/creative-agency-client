@@ -21,7 +21,7 @@ const Order = () => {
 
     const handleAddOrder = (e) => {
         const orderInfo = {status: 'pending', email: loggedInUser.email , ...info, createdTime: new Date()};
-        fetch('http://localhost:5000/addOrder',{
+        fetch('https://murmuring-spire-02035.herokuapp.com/addOrder',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(orderInfo)

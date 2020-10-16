@@ -9,7 +9,7 @@ const SarviceList = () => {
     const[sarvice, setSarvice] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/showAllService')
+        fetch('https://murmuring-spire-02035.herokuapp.com/showAllService')
         .then(response => response.json())
         .then(data => setSarvice(data))
     },[])

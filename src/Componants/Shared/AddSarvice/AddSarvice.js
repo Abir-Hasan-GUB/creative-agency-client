@@ -16,7 +16,7 @@ const AddSarvice = () => {
     const handleAddSarvice = (e) => {
         const sarviceInfo = {...info, createdTime: new Date()};
 
-        fetch('http://localhost:5000/addSarvice',{
+        fetch('https://murmuring-spire-02035.herokuapp.com/addSarvice',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(sarviceInfo)

@@ -17,7 +17,7 @@ const AdminPanel = () => {
     const [isAdmin,setisAdmin] = useState(false);
 
     useEffect(() =>{
-        fetch('http://localhost:5000/isAdmin',{
+        fetch('https://murmuring-spire-02035.herokuapp.com/isAdmin',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({email: loggedInUser.email})
