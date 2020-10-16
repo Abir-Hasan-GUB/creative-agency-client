@@ -6,7 +6,7 @@ import './AddSarvice.css';
 const AddSarvice = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [info, setInfo] = useState({});
-    const [file, setFile] = useState(null);
+    // const [file, setFile] = useState(null);
 
     const handleBlur = e =>{
         const newInfo = {...info}
@@ -14,28 +14,21 @@ const AddSarvice = () => {
         setInfo(newInfo);
     }
 
-    const handleFileChenge = e =>{
-        const newFile = e.target.files[0];
-        setFile(newFile);
-    }
+    // const handleFileChenge = e =>{
+    //     const newFile = e.target.files[0];
+    //     setFile(newFile);
+    // }
 
     const handleAddSarvice = () => {
-        const formData = new FormData()
-        formData.append('file', file);
-        formData.append('name', info.name);
-        formData.append('designation', info.designation);
+        const sarviceInfo = {...info, createdTime: new Date()};
 
-        fetch('http://localhost:5000/addSarvice', {
+        fetch('https://frozen-ridge-88734.herokuapp.com/addSarvice',{
             method: 'POST',
-            body: formData
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(sarviceInfo)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        .then(response => response.json())
+        .then(success => {})
     }
 
     return (
@@ -64,7 +57,7 @@ const AddSarvice = () => {
                                 </div>
                                 <div className="col-md-6 SarviceRight">
                                     <h6>Icon</h6>
-                                    <input onChange={handleFileChenge} className="IconUpload" type="file" name="file" id="" required />
+                                    <input className="IconUpload" type="file" name="file" id="" required />
                                 </div>
                             </div>
                         </form>

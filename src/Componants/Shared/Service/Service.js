@@ -9,7 +9,7 @@ const Service = () => {
     const[orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('https://frozen-hamlet-61699.herokuapp.com/registerUser?email='+loggedInUser.email)
+        fetch('https://frozen-ridge-88734.herokuapp.com/registerUser?email='+loggedInUser.email)
         .then(response => response.json())
         .then(data => setOrders(data))
     },[])

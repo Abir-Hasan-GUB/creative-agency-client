@@ -12,7 +12,7 @@ const Review = () => {
 
         let commentsInfo = {designation: CompanyDesignation,message: reviewMessage,name: userNameForReview,photoURL:loggedInUser.photoURL};
 
-        fetch('https://frozen-hamlet-61699.herokuapp.com/addComments',{
+        fetch('https://frozen-ridge-88734.herokuapp.com/addComments',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(commentsInfo)

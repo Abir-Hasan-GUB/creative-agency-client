@@ -9,7 +9,7 @@ const SarviceList = () => {
     const[sarvice, setSarvice] = useState([]);
 
     useEffect(() => {
-        fetch('https://frozen-hamlet-61699.herokuapp.com/showAllService')
+        fetch('https://frozen-ridge-88734.herokuapp.com/showAllService')
         .then(response => response.json())
         .then(data => setSarvice(data))
     },[])

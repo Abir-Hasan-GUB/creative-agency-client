@@ -7,6 +7,7 @@ const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
+
     const handleBlur = e =>{
         const newInfo = {...info}
         newInfo[e.target.name] = e.target.value;
@@ -28,12 +29,12 @@ const Order = () => {
         const formData = new FormData()
         formData.append('file', file);
         formData.append('name', info.name);
-        formData.append('email', info.email);
+        formData.append('email', loggedInUser.email);
         formData.append('productName', info.productName);
         formData.append('ProductDetails', info.ProductDetails);
         formData.append('price', info.price);
 
-        fetch('https://frozen-hamlet-61699.herokuapp.com/addOrder', {
+        fetch('https://frozen-ridge-88734.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })
@@ -66,7 +67,7 @@ const Order = () => {
                 <div className="orderImg footerRight">
                 <form onSubmit={handleAddOrder}>
                         <input onBlur = {handleBlur} type="text" placeholder="Your name / company’s name" name="name" id="" required />
-                        <input onBlur = {handleBlur} type="email" placeholder="Your email address" name="email" id="" required />
+                        <input value ={loggedInUser.email} type="email" placeholder="Your email address" name="email" id="" required />
                         <input onChange = {onChengName} name="" type="text" placeholder="Product Type" name="productName" id="productName" required />
                         <textarea onBlur = {handleBlur} placeholder="Project Details" name="ProductDetails" id="" cols="30" rows="5" required></textarea>
                         <div className="inputSlice">
