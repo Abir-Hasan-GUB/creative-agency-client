@@ -18,7 +18,12 @@ const Review = () => {
             body: JSON.stringify(commentsInfo)
         })
         .then(response => response.json())
-        .then(success => {})
+        .then(success => {
+            alert("Order Placed Successfully !")
+            document.getElementById('userNameForReview').value = '';
+            document.getElementById('CompanyDesignation').value = '';
+            document.getElementById('reviewMessage').value = '';
+        })
     }
 
     return (

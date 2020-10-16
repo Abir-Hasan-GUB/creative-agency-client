@@ -13,7 +13,7 @@ const AddSarvice = () => {
         setInfo(newInfo);
     }
 
-    const handleAddSarvice = () => {
+    const handleAddSarvice = (e) => {
         const sarviceInfo = {...info, createdTime: new Date()};
 
         fetch('http://localhost:5000/addSarvice',{
@@ -22,9 +22,14 @@ const AddSarvice = () => {
             body: JSON.stringify(sarviceInfo)
         })
         .then(response => response.json())
-        .then(success => {})
-    }
-
+        .then(success => {
+            alert("Sarvice Added Successfully !")
+            document.getElementById('text').value = '';
+            document.getElementById('designation').value = '';
+        })
+        e.preventDefault();
+    } 
+        
     return (
         <div className="container review">
             <div className="row">
@@ -43,9 +48,9 @@ const AddSarvice = () => {
                                 <div className="col-md-6 addSarviceLeft">
 
                                     <h6>Sarvice Title</h6>
-                                    <input onBlur = {handleBlur} placeholder="Enter title" type="text" name="name" id="ab" required />
+                                    <input onBlur = {handleBlur} placeholder="Enter title" type="text" name="name" id="text" required />
                                     <h6>description</h6>
-                                    <textarea onBlur = {handleBlur} placeholder="Enter Designation" name="designation" id="" cols="30" rows="3" required></textarea>
+                                    <textarea onBlur = {handleBlur} placeholder="Enter Designation" name="designation" id="designation" cols="30" rows="3" required></textarea>
                                     <input className="btn btn-success sar footerSendBtn addSarviceBtn" type="submit" value="Submit" />
 
                                 </div>

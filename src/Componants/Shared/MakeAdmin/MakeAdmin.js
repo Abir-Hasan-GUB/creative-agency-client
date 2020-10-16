@@ -5,17 +5,21 @@ import './MakeAdmin.css';
 const MakeAdmin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     
-    const handleAddSarvice = () => {
+    const handleAddSarvice = (e) => {
         const adminMail = document.getElementById('adminMail').value;
-        const AdminInfo = {email:"adminMail", name:"admin", createdTime: new Date()};
+        const AdminInfo = {email:adminMail, name:"admin", createdTime: new Date()};
 
-        fetch('http://localhost:5000/addComments',{
+        fetch('http://localhost:5000/addAdmin',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(AdminInfo)
         })
         .then(response => response.json())
-        .then(success => {})
+        .then(success => {
+            alert("Admin Added Successfully !")
+            document.getElementById('adminMail').value = '';
+        })
+        e.preventDefault();
     }
    
     return (
