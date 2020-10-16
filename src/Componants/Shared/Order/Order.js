@@ -6,7 +6,6 @@ import './Order.css';
 const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [info, setInfo] = useState({});
-    const [file, setFile] = useState(null);
 
     const handleBlur = e =>{
         const newInfo = {...info}
@@ -20,31 +19,15 @@ const Order = () => {
         setInfo(newInfo);
     }
 
-    const handleFileChenge = e =>{
-        const newFile = e.target.files[0];
-        setFile(newFile);
-    }
-
     const handleAddOrder = () => {
-        const formData = new FormData()
-        formData.append('file', file);
-        formData.append('name', info.name);
-        formData.append('email', loggedInUser.email);
-        formData.append('productName', info.productName);
-        formData.append('ProductDetails', info.ProductDetails);
-        formData.append('price', info.price);
-
-        fetch('https://frozen-ridge-88734.herokuapp.com/addOrder', {
+        const orderInfo = {status: 'pending', email: loggedInUser.email ,...info, createdTime: new Date()};
+        fetch('https://frozen-ridge-88734.herokuapp.com/addOrder',{
             method: 'POST',
-            body: formData
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(orderInfo)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        .then(response => response.json())
+        .then(success => {})
     }
 
 
@@ -72,7 +55,7 @@ const Order = () => {
                         <textarea onBlur = {handleBlur} placeholder="Project Details" name="ProductDetails" id="" cols="30" rows="5" required></textarea>
                         <div className="inputSlice">
                         <input onBlur = {handleBlur} className="slice1" type="num" placeholder="Price" name="price" id="" required />
-                        <input onChange={handleFileChenge} className="slice2" type="file" name="file" id=""/>
+                        <input className="slice2" type="file" name="file" id="" required/>
                         </div>
                         <input className="btn btn-dark footerSendBtn" type="submit" value="send" />
                     </form>
