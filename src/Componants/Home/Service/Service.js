@@ -9,7 +9,7 @@ const Service = () => {
     const[course, setCourse] = useState([]);
 
     useEffect(() => {
-        fetch('https://frozen-ridge-88734.herokuapp.com/showCourse')
+        fetch('http://localhost:5000/showCourse')
         .then(response => response.json())
         .then(data => setCourse(data))
     },[])

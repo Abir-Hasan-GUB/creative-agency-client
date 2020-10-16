@@ -5,9 +5,9 @@ const Footer = () => {
     return (
         <div id="Footer" className="container">
             <div className="footer row">
-                <div className="col-md-6 footerLeft">
+                <div className="col-md-6 footerLeft " id="footerText1">
 
-                    <h2>Let us handle your project, professionally.</h2>
+                    <h2 >Let us handle your project, professionally.</h2>
 
                     <p className="mt-5">With well written codes, we build amazing apps for all platforms, mobile and web apps in general.</p>
                 </div>

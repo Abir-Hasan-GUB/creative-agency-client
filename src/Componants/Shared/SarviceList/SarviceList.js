@@ -9,7 +9,7 @@ const SarviceList = () => {
     const[sarvice, setSarvice] = useState([]);
 
     useEffect(() => {
-        fetch('https://frozen-ridge-88734.herokuapp.com/showAllService')
+        fetch('http://localhost:5000/showAllService')
         .then(response => response.json())
         .then(data => setSarvice(data))
     },[])
@@ -36,13 +36,10 @@ const SarviceList = () => {
                     <p>Status</p>
                 </div>
 
-                <ServiceListPerUser name="Abir Hasan" email= "abir.green.cse@gmail.com" productName = "Software Engineering" productDetails = "lorem10kjfksdfjsdfjsdjfksd sdfjsk kjf k k skdf sfj " price = "500"></ServiceListPerUser>
-
                 {/* show sarvice lise sirially */}
                 {
                     sarvice.map(perSarvice => <ServiceListPerUser name={perSarvice.name} email={perSarvice.email} productName = {perSarvice.productName} productDetails = {perSarvice.ProductDetails} price = {perSarvice.price}></ServiceListPerUser>)
                 }
-                {/* <ServiceListPerUser></ServiceListPerUser> */}
             </div>
         </div>
        </div>

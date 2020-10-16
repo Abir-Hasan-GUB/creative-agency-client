@@ -10,7 +10,7 @@ const Banner = () => {
             <NavBar></NavBar>
                 <div className="col-md-5 d-flex align-items-center">
                    <div className="bannerText pl-5">
-                   <h1 className="bannerTitle mb-5">
+                   <h1 id="bannerTitle" className="bannerTitle mb-5">
                     Let’s Grow Your Brand To The Next Level
                     </h1>
                         <p className="bannerDescription mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>

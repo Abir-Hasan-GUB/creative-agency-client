@@ -9,3 +9,114 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Responsive Design  */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 575px) {
+  h2{
+    font-size: 28px !important;
+  }
+  h1{
+    font-size: 30px !important;
+  }
+  #bannerTitle{
+    margin-top: 30%;
+    margin-bottom: 1rem !important;
+  }
+  /* .bannerImg img{
+    display: none;
+  } */
+  .bannerImg {
+    height: 646px;
+  }
+  .brandLogo {
+    height: 0;
+    width: 100%;
+    margin: 0 auto 50px auto;
+}
+a, Link {
+  text-decoration: none;
+  margin: 0 auto;
+}
+.footer {
+  height: auto !important;
+  width : auto !important;
+}
+#Footer{
+  margin-top: 129%;
+}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+  h2{
+    font-size: 28px !important;
+  }
+  h1{
+    font-size: 30px !important;
+  }
+  #bannerTitle{
+    margin-top: 30%;
+    margin-bottom: 1rem !important;
+  }
+  /* .bannerImg img{
+    display: none;
+  } */
+  .bannerImg {
+    height: 646px;
+  }
+  .brandLogo {
+    height: 0;
+    width: 100%;
+    margin: 0 auto 50px auto;
+}
+a, Link {
+  text-decoration: none;
+  margin: 0 auto;
+}
+.footer {
+  height: auto !important;
+}
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  h2{
+    font-size: 28px !important;
+  }
+  h1{
+    font-size: 30px !important;
+  }
+ #bannerTitle{
+   margin-top: -44%;
+   margin-bottom: 1rem !important;
+ }
+ #brandLogo{
+  height: 142px;
+  width: 84%;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-top: -12%;
+ }
+ #footerText1{
+  padding: 50px 48px; 
+ }
+ #footerText1 h2{
+  font-size: 24px !important; 
+ }
+ .footerLeft p{
+   width: 250px !important;
+ }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    
+}
+ 

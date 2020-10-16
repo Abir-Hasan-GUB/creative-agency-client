@@ -6,7 +6,6 @@ import './AddSarvice.css';
 const AddSarvice = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [info, setInfo] = useState({});
-    // const [file, setFile] = useState(null);
 
     const handleBlur = e =>{
         const newInfo = {...info}
@@ -14,15 +13,10 @@ const AddSarvice = () => {
         setInfo(newInfo);
     }
 
-    // const handleFileChenge = e =>{
-    //     const newFile = e.target.files[0];
-    //     setFile(newFile);
-    // }
-
     const handleAddSarvice = () => {
         const sarviceInfo = {...info, createdTime: new Date()};
 
-        fetch('https://frozen-ridge-88734.herokuapp.com/addSarvice',{
+        fetch('http://localhost:5000/addSarvice',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(sarviceInfo)

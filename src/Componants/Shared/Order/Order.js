@@ -20,8 +20,8 @@ const Order = () => {
     }
 
     const handleAddOrder = () => {
-        const orderInfo = {status: 'pending', email: loggedInUser.email ,...info, createdTime: new Date()};
-        fetch('https://frozen-ridge-88734.herokuapp.com/addOrder',{
+        const orderInfo = {status: 'pending', email: "loggedInUser.email" , ...info, createdTime: new Date()};
+        fetch('http://localhost:5000/addOrder',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(orderInfo)

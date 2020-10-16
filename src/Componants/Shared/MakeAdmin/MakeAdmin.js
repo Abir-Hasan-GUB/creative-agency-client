@@ -7,9 +7,9 @@ const MakeAdmin = () => {
     
     const handleAddSarvice = () => {
         const adminMail = document.getElementById('adminMail').value;
-        const AdminInfo = {email:adminMail, name:"admin", createdTime: new Date()};
+        const AdminInfo = {email:"adminMail", name:"admin", createdTime: new Date()};
 
-        fetch('https://frozen-ridge-88734.herokuapp.com/addAdmin',{
+        fetch('http://localhost:5000/addComments',{
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(AdminInfo)

@@ -9,7 +9,7 @@ import slack from '../../Images/logos/slack.png';
 const BrandLogo = () => {
     return (
         <div className = 'container'>
-           <div className="brandLogo d-flex justify-content-between align-items-center">
+           <div id = 'brandLogo'className="brandLogo d-flex justify-content-between align-items-center">
                <img src = {slack} alt="" className="img-fluid"/>
                <img src = {google} alt="" className="img-fluid"/>
                <img src = {uber} alt="" className="img-fluid"/>

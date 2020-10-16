@@ -8,7 +8,7 @@ const ClientsFeedback = () => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        fetch('https://frozen-ridge-88734.herokuapp.com/showComents')
+        fetch('http://localhost:5000/showComents')
             .then(response => response.json())
             .then(data => setComments(data))
     }, [])
